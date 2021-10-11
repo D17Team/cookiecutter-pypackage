@@ -1,15 +1,7 @@
 # Python Project Wizard
 
-A tool for creating skeleton python project, built with popular develop tools and 
-conform to best practice.
-
-[![Version](http://img.shields.io/pypi/v/ppw?color=brightgreen)](https://pypi.python.org/pypi/ppw)
-[![CI Status](https://github.com/zillionare/cookiecutter-pypackage/actions/workflows/release.yml/badge.svg)](https://github.com/zillionare/cookiecutter-pypackage)
-[![Dowloads](https://img.shields.io/pypi/dm/ppw)](https://pypi.org/project/ppw/)
-[![License](https://img.shields.io/pypi/l/ppw)](https://opensource.org/licenses/BSD-2-Clause)
-![Python Versions](https://img.shields.io/pypi/pyversions/ppw)
-
-
+This is the skeleton for all the python package we will be deploying in Spiny. 
+You can use it to generate a python package projects.
 ## Features
 
 This tool will create Python project with the following features:
@@ -25,43 +17,35 @@ This tool will create Python project with the following features:
 * [Mkdocstrings]: Auto API doc generation
 * Command line interface using [Python Fire] (optional)
 * Continuouse Integration/Deployment by [github actions], includes:
-    - publish dev build/official release to TestPyPI/PyPI automatically when CI success
+    - publish dev build/official release to our our custom python server
     - publish documents automatically when CI success
     - extract change log from github and integrate with release notes automatically
 * Host your documentation from [Git Pages] with zero-config
 
 ## Quickstart
 
-Install ppw if you haven't install it yet:
+### Install cookiecutter
 
-```
-  pip install -U ppw
-```
+To use this cookiecutter make sure you have installed  cookiecutter.
 
-Generate a Python package project by simple run:
+Make sure you have python and pip installed in your project. 
 
-```
-  ppw
-```
+You can use pip to install the cookiecutter with the following command : 
 
-Then follow **[Tutorial](https://zillionare.github.io/cookiecutter-pypackage/tutorial/)** to finish other configurations.
+`pip install cookiecutter`
 
-# Credits
+### Generate a project
 
-This repo is forked from [audreyr/cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage), and borrowed some ideas from [briggySmalls](https://github.com/briggySmalls/cookiecutter-pypackage)
+To generate the project you can use the following command : 
+
+`cookiecutter https://github.com/D17Team/cookiecutter-pypackage.git`
+
+You’ll be asked to enter values to set your project up. If you don’t know what to enter, stick with the defaults.
 
 
-[poetry]: https://python-poetry.org/
-[mkdocs]: https://www.mkdocs.org
-[pytest]: https://pytest.org
-[codecov]: https://codecov.io
-[tox]: https://tox.readthedocs.io
-[black]: https://github.com/psf/black
-[isort]: https://github.com/PyCQA/isort
-[flake8]: https://flake8.pycqa.org
-[flake8-docstrings]: https://pypi.org/project/flake8-docstrings/
-[mkdocstrings]: https://mkdocstrings.github.io/
-[Python Fire]: https://github.com/google/python-fire
-[github actions]: https://github.com/features/actions
-[Git Pages]: https://pages.github.com
-[Pre-commit hooks]: https://pre-commit.com/
+## Deploy to the server 
+
+Once you have install everything and write you code under the script, you push directly to the main branch.
+
+The push will trigger a workflow that will deploy your project to our server.
+For more details about the workflow you can check the code under `{{cookiecutter.project_name}}/.github/publish.yml`
