@@ -69,6 +69,6 @@ jobs:
 
       - name: publish the application to the server # this publish the application to the pypi server
         run: | #need to make sure the application will delete old packages
-          poetry config repositories.{{ cookiecutter.project_name }} ${{secrets.PYPI_HOST}}
-          poetry config http-basic.{{ cookiecutter.project_name }} ${{secrets.PYPI_USERNAME}} ${{secrets.PYPI_PASSWORD}}
-          poetry publish -r {{ cookiecutter.project_name }} -v
+          poetry config repositories.{{cookiecutter.project_slug}} ${{secrets.PYPI_HOST}}
+          poetry config http-basic.{{cookiecutter.project_slug}} ${{secrets.PYPI_USERNAME}} ${{secrets.PYPI_PASSWORD}}
+          poetry publish -r {{cookiecutter.project_slug}} -v
