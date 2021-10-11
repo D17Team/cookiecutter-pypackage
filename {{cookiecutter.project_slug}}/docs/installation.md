@@ -6,13 +6,13 @@ To install {{ cookiecutter.project_name }}, run this command in your
 terminal:
 
 ``` console
-$ pip install {{ cookiecutter.project_slug }}
+$ poetry add@{{ cookiecutter.project_slug }}
 ```
 
 This is the preferred method to install {{ cookiecutter.project_name
 }}, as it will always install the most recent stable release.
 
-If you don't have [pip][] installed, this [Python installation guide][]
+If you don't have [poetry][] installed, this [Python installation guide][]
 can guide you through the process.
 
 ## From source
@@ -35,7 +35,7 @@ $ curl -OJL https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutte
 Once you have a copy of the source, you can install it with:
 
 ``` console
-$ pip install .
+$ poetry install .
 ```
 
   [pip]: https://pip.pypa.io
