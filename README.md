@@ -1,4 +1,4 @@
-# Python Project Wizard
+# Spiny Custom Model Template
 
 This is the skeleton for all the python package we will be deploying in Spiny. 
 You can use it to generate a python package projects.
@@ -49,3 +49,5 @@ Once you have install everything and write you code under the script, you push d
 
 The push will trigger a workflow that will deploy your project to our server.
 For more details about the workflow you can check the code under `{{cookiecutter.project_name}}/.github/publish.yml`
+
+PS : just check the publish.yml file and check the repository name if it was correctly rendered

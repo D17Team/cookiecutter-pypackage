@@ -1,42 +1,35 @@
-{% set is_open_source = cookiecutter.open_source_license != 'Not open source' -%}
 # {{ cookiecutter.project_name }}
 
-{% if is_open_source %}
-<p align="center">
-<a href="https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}">
-    <img src="https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg"
-        alt = "Release Status">
-</a>
 
-<a href="https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/actions">
-    <img src="https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/actions/workflows/main.yml/badge.svg?branch=release" alt="CI Status">
-</a>
-
-<a href="https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?badge=latest">
-    <img src="https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest" alt="Documentation Status">
-</a>
-{% if cookiecutter.add_pyup_badge == 'y' %}
-<a href="https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/">
-<img src="https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/shield.svg" alt="Updates">
-</a>
-{% endif %}
-</p>
-{% else %}
-{% if cookiecutter.add_pyup_badge == 'y' %}
-<p>
-<a href="https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/">
-<img src="https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/shield.svg" alt="Updates">
-</a>
-</p>
-{% endif %}
-{% endif %}
 
 {{ cookiecutter.project_short_description }}
 
-{% if is_open_source %}
-* Free software: {{ cookiecutter.open_source_license }}
-* Documentation: <https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io>
-{% endif %}
+## How should we install this package?
+
+We are installing the package using poetry , make sure  you have poetry installed on your machine.
+
+If that is the case you can run the following commands.
+
+
+
+- `poetry config repositories.auto_tagger http://auto-tagger-pkg-load-balancer-819345320.us-east-2.elb.amazonaws.com/`
+- `poetry config http-basic.auto_tagger $PYPI_USERNAME $PYPI_PASSWORD`
+- `poetry add {{ cookiecutter.project_slug }} -vvv`
+
+You can can get the password and the username directly from the the slack channel or from any team member. 
+
+## Features
+
+* TODO
+
+
+## Making Changes to the package
+
+Once you you are done with your changes you can push them directly and it will trigger the Github action to publish the package.
+
+- Run `git tag v1.X.X`
+- Run `git push --tags`
+
 
 ## Features
 
