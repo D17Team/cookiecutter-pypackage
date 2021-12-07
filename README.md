@@ -43,9 +43,23 @@ To generate the project you can use the following command :
 You’ll be asked to enter values to set your project up. If you don’t know what to enter, stick with the defaults.
 
 
+### Create a Repo
+These instructions may have caused the following error: Failed to install pre-commit hooks. Please run `pre-commit install` by your self.  This is due to not having a repository. 
+
+Go to github.
+Log in to your account. Go to the D17 repositories.
+Click the new repository button in the top-right. You’ll have an option there to initialize the repository with a README file, but I don’t.
+Click the “Create repository” button and create your repository.  
+
+From the command line:
+run `pre-commit install` if that failed before
+cd into your created project 
+git init 
+git remote add origin https://github.com/D17Team/project.git
+
 ## Deploy to the server 
 
-Once you have install everything and write you code under the script, you push directly to the main branch.
+Once you have install everything and write you code under the script, you push directly to the main branch. (using git add, git commit, git push)
 
 The push will trigger a workflow that will deploy your project to our server.
 For more details about the workflow you can check the code under `{{cookiecutter.project_name}}/.github/publish.yml`
