@@ -44,10 +44,23 @@ You’ll be asked to enter values to set your project up. If you don’t know wh
 
 
 ## Deploy to the server 
+The publish worklow under the path  `{{cookiecutter.project_name}}/.github/publish.yml` will handle the deployment for you.
 
-Once you have install everything and write you code under the script, you push directly to the main branch.
+### QA.
 
-The push will trigger a workflow that will deploy your project to our server.
-For more details about the workflow you can check the code under `{{cookiecutter.project_name}}/.github/publish.yml`
+I see the publish.yml file. 
 
-PS : just check the publish.yml file and check the repository name if it was correctly rendered
+**_How do I know that file ran?_** 
+
+Any time you push a file to the master branch, The push will trigger the Publish workflow that will deploy your project to our server.
+**_I cannot tell if it was successful?_** 
+
+If you go under Github actions of your new package repository you can see if the action was successful. @chiazor can add the other slack notification in the future to notify the slack channel anytime a push is successful. 
+
+**_how do I use that new package?_**
+
+You don't need to edit it, just read it and understand what it does, and it will do the work for you.
+
+ **_Will it updates every time I push to master?_** 
+
+Yes, see section one.
